@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hameed Alaudin | DevOps Engineer</title>
+</head>
+<body>
+
+<h1>Hameed Alaudin</h1>
+
+<p>DevOps Engineer | AWS | Kubernetes | Docker | Terraform | Jenkins</p>
+
+<hr>
+
+<h2>Visitor Count</h2>
+<p id="count">Loading...</p>
+
+<h2>About Me</h2>
+<p>
+DevOps Engineer with 2+ years of experience in cloud infrastructure,
+CI/CD automation, Kubernetes, Docker, Terraform and AWS.
+</p>
+
+<h2>Skills</h2>
+<ul>
+<li>AWS</li>
+<li>Docker</li>
+<li>Kubernetes</li>
+<li>Terraform</li>
+<li>Jenkins</li>
+<li>GitHub Actions</li>
+</ul>
+
+<script>
+async function getVisitorCount() {
+    const response = await fetch(
+        "https://h1837u1nuh.execute-api.us-east-1.amazonaws.com/prod/visitorcount"
+    );
+
+    const data = await response.json();
+
+    document.getElementById("count").innerText = data.count;
+}
+
+getVisitorCount();
+</script>
+
+</body>
+</html>
